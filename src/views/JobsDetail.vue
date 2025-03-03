@@ -18,11 +18,8 @@ import { jobs } from './jobData/jobData.js';
 const route = useRoute();
 
 const job = computed(() => {
-  console.log('Current route ID:', route.params.id);
   return jobs.find((j) => j.id === Number(route.params.id)) || null;
 });
-
-console.log('Found job:', job.value);
 
 const jobId = computed(() => job.value?.id ?? 'N/A');
 const jobTitle = computed(() => job.value?.title ?? 'Job Not Found');
