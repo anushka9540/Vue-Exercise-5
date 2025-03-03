@@ -11,10 +11,8 @@
 
 <style scoped>
 nav {
-  width: 890px;
   display: flex;
-  justify-content: center;
-  gap: 150px;
+  justify-content: space-evenly;
   padding: 15px 0;
   background: #333;
   margin-top: 10px;

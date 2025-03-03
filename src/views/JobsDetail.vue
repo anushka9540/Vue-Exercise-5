@@ -10,9 +10,11 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
+import { computed } from 'vue';
 
 const route = useRoute();
-const jobId = route.params.id;
+
+const jobId = computed(() => route.params.id);
 
 const jobs = [
   {
@@ -35,10 +37,15 @@ const jobs = [
   }
 ];
 
-const job = jobs.find((job) => job.id === parseInt(jobId));
-const jobTitle = job?.title || 'Job Not Found';
-const jobDetails =
-  job?.details || 'The job you are looking for does not exist.';
+const job = computed(() =>
+  jobs.find((job) => job.id === Number(jobId.value))
+);
+
+const jobTitle = computed(() => job.value?.title || 'Job Not Found');
+const jobDetails = computed(
+  () => job.value?.details || 'The job you are looking for does not exist.'
+);
+
 </script>
 
 <style scoped>

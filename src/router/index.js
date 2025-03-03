@@ -28,7 +28,7 @@ const routes = [
     component: JobDetail
   },
   {
-    path: '/:catchAll(.*)',
+    path: '/:pathMatch(.*)*',
     name: 'not-found',
     component: NotFound
   }
