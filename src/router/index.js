@@ -25,7 +25,7 @@ const routes = [
   {
     path: '/jobs/:id',
     name: 'jobsDetail',
-    component: JobDetail
+    component: JobDetail,
   },
   {
     path: '/:pathMatch(.*)*',

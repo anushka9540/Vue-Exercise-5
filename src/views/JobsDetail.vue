@@ -13,18 +13,21 @@
 <script setup>
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
+import { jobs } from './jobData/jobData.js';
 
-const props = defineProps(['jobs']);
 const route = useRoute();
 
-const job = computed(() =>
-  props.jobs.find((j) => j.id === Number(route.params.id))
-);
+const job = computed(() => {
+  console.log('Current route ID:', route.params.id);
+  return jobs.find((j) => j.id === Number(route.params.id)) || null;
+});
 
-const jobId = computed(() => job.value?.id || 'N/A');
-const jobTitle = computed(() => job.value?.title || 'Job Not Found');
+console.log('Found job:', job.value);
+
+const jobId = computed(() => job.value?.id ?? 'N/A');
+const jobTitle = computed(() => job.value?.title ?? 'Job Not Found');
 const jobDetails = computed(
-  () => job.value?.details || 'The job you are looking for does not exist.'
+  () => job.value?.details ?? 'The job you are looking for does not exist.'
 );
 </script>
 

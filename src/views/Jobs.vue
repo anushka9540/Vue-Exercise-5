@@ -14,10 +14,12 @@
       </div>
     </div>
   </div>
+
+  <router-view :jobs="jobs" />
 </template>
 
 <script setup>
-defineProps(['jobs']);
+import { jobs } from './jobData/jobData.js'; 
 </script>
 
 <style scoped>
