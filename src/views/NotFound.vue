@@ -1,13 +1,15 @@
 <template>
   <div class="not-found">
-    <section :style="{ backgroundImage: `url(${PageNotFoundImage})`}"></section>
+    <section
+      :style="{ backgroundImage: `url(${PageNotFoundImage})` }"
+    ></section>
     <p>Oops! The page you're looking for does not exist.</p>
     <router-link to="/" class="back-button">🏠 Go Home</router-link>
   </div>
 </template>
 
 <script setup>
-import PageNotFoundImage from '../assets/PageNotFoundImage.jpg'
+import PageNotFoundImage from '../assets/PageNotFoundImage.jpg';
 </script>
 
 <style scoped>
@@ -26,7 +28,7 @@ import PageNotFoundImage from '../assets/PageNotFoundImage.jpg'
   align-items: center;
   justify-content: center;
 }
-section{
+section {
   height: 300px;
   width: 300px;
   background-position: center;
@@ -59,7 +61,7 @@ p {
     max-width: 90%;
     padding: 30px;
   }
-  
+
   p {
     font-size: 1rem;
   }

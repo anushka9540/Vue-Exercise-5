@@ -6,7 +6,7 @@
       top companies worldwide. Our mission is to help job seekers find their
       dream careers.
     </p>
-  
+
     <div class="about-content">
       <div class="about-card">
         <h3>🌟 Why Choose Us?</h3>
@@ -15,7 +15,7 @@
           real-time job alerts, and AI-powered recommendations.
         </p>
       </div>
-  
+
       <div class="about-card">
         <h3>💼 Connecting Talent with Opportunities</h3>
         <p>
@@ -68,7 +68,7 @@ p {
   transition: 0.3s;
 }
 
-.about-card:hover{
+.about-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
 }

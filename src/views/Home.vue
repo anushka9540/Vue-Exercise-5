@@ -5,7 +5,7 @@
       Your career journey starts here! Explore thousands of job opportunities
       across various industries.
     </p>
-  
+
     <div class="features">
       <div class="feature-card">
         <h3>🔍 Job Search Made Easy</h3>
@@ -67,7 +67,7 @@ p {
   transition: 0.3s;
 }
 
-.feature-card:hover{
+.feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
 }
