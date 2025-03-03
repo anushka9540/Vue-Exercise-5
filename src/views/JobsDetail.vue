@@ -3,8 +3,10 @@
     <h1>{{ jobTitle }}</h1>
     <p class="job-id">Job ID: {{ jobId }}</p>
     <p class="job-description">{{ jobDetails }}</p>
-  
-    <router-link to="/jobs" class="back-button">← Back to Job Listings</router-link>
+
+    <router-link to="/jobs" class="back-button"
+      >← Back to Job Listings</router-link
+    >
   </div>
 </template>
 
@@ -12,40 +14,18 @@
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
+const props = defineProps(['jobs']);
 const route = useRoute();
 
-const jobId = computed(() => route.params.id);
-
-const jobs = [
-  {
-    id: 1,
-    title: 'UX Designer',
-    details:
-      'A UX (User Experience) Designer focuses on enhancing user satisfaction by improving the usability, accessibility, and interaction of a product.'
-  },
-  {
-    id: 2,
-    title: 'Web Developer',
-    details:
-      'A Web Developer builds and maintains websites and web applications, ensuring functionality, performance, and responsiveness.'
-  },
-  {
-    id: 3,
-    title: 'Node.js Developer',
-    details:
-      'A Node.js Developer specializes in backend development using Node.js to build scalable and high-performance web applications.'
-  }
-];
-
 const job = computed(() =>
-  jobs.find((job) => job.id === Number(jobId.value))
+  props.jobs.find((j) => j.id === Number(route.params.id))
 );
 
+const jobId = computed(() => job.value?.id || 'N/A');
 const jobTitle = computed(() => job.value?.title || 'Job Not Found');
 const jobDetails = computed(
   () => job.value?.details || 'The job you are looking for does not exist.'
 );
-
 </script>
 
 <style scoped>

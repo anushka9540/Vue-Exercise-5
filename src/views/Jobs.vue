@@ -5,39 +5,19 @@
       Browse the latest job openings and kickstart your career with top
       companies.
     </p>
-  
+
     <div class="jobs-container">
       <div v-for="job in jobs" :key="job.id" class="job-card">
-        <router-link :to="`/jobs/${job.id}`" class="job-title">{{
-          job.title
-          }}</router-link>
-        <p class="job-details">{{ job.details }}</p>
+        <router-link :to="`/jobs/${job.id}`" class="job-title">
+          {{ job.title }}
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const jobs = [
-  {
-    id: 1,
-    title: 'UX Designer',
-    details:
-      'Create intuitive and user-friendly designs for applications and websites.'
-  },
-  {
-    id: 2,
-    title: 'Web Developer',
-    details:
-      'Develop scalable, responsive web applications with modern technologies.'
-  },
-  {
-    id: 3,
-    title: 'Node.js Developer',
-    details:
-      'Build backend systems using Node.js and integrate APIs for web applications.'
-  }
-];
+defineProps(['jobs']);
 </script>
 
 <style scoped>
@@ -71,11 +51,15 @@ h1 {
 }
 
 .job-card {
+  height: 80px;
   background: white;
   padding: 18px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .job-card:hover {
