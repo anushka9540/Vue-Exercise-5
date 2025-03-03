@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="navBar">
     <router-link to="/" class="nav-link">Home</router-link>
     <router-link to="/about" class="nav-link">About</router-link>
     <router-link to="/jobs" class="nav-link">Jobs</router-link>
@@ -10,13 +10,6 @@
 <script setup></script>
 
 <style scoped>
-nav {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 15px 0;
-  background: #333;
-  margin-top: 10px;
-}
 
 .nav-link {
   color: white;
@@ -28,6 +21,15 @@ nav {
 
 .nav-link:hover {
   color: #3498db;
+}
+
+.navBar {
+  display: flex;
+  width: 890px;
+  justify-content: space-evenly;
+  padding: 15px 0;
+  background: #333;
+  margin-top: 10px;
 }
 
 nav a.router-link-exact-active {
